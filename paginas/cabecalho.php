@@ -13,7 +13,12 @@
   <body>
   	<div>
    		<div class="barra" >
-   			<!--
+   			<?php 
+        include 'paginas/fnLoginLogout.php';
+        include 'paginas/CRUD_Usuario.php';
+
+          if (!isLogado()):
+         ?>
    			<span class="barraCL">
    				<a href="cadastrar.php#form">Cadastrar</a>
    			</span> &nbsp&nbsp      
@@ -21,17 +26,21 @@
    			<span class="barraCL">
    				<a href="login.php">Login</a>
    			</span>
-   			-->
+   			<?php endif; 
+         if (isLogado()):
+           $email=$_SESSION['usuario_logado'];
+           $usuario=read_usuario_email($email);
+        ?>
    			
    			<span class="barraCL">
-   				<a href="painel.php">Olá Fulano</a>
+   				<a href="painel.php"><?=$usuario['nome']?></a>
    			</span> &nbsp&nbsp      
    			
    			<span class="barraCL">
-   				<a href="#">sair</a>
+   				<a href="paginas/logout.php">sair</a>
    			</span>
    		</div>
-   		
+   		<?php endif ?>
 
    	</div>
    <section class="cor1">

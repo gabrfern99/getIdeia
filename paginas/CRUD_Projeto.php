@@ -1,5 +1,4 @@
 <?php
-require_once ('conexaoBD.php');
 
  function create_projeto($id_usuario,$img,$classificacao,$descricao,$sobre,$preco,$categoria,$previa){
 	//Tratando valores de variáveis para não ter caracter que corrompa o BD

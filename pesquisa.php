@@ -12,6 +12,8 @@
   <body>
   	<?php
   		include 'paginas/CRUD_Projeto.php';
+  		include 'paginas/fnLoginLogout.php';
+       	include 'paginas/CRUD_Usuario.php';
   		//Se existir, definindo valor da pesquisa;
   		$pesquisa='';
   		if (array_key_exists('pesquisa', $_GET)) {
@@ -41,23 +43,32 @@
   	?>
   	<div>
    		<div class="barra" >
-   			<!--
+   			<?php 
+
+	          if (!isLogado()):
+	         ?>
+		   			<span class="barraCL">
+		   				<a href="cadastrar.php#form">Cadastrar</a>
+		   			</span> &nbsp&nbsp      
+		   			
+		   			<span class="barraCL">
+		   				<a href="login.php">Login</a>
+		   			</span>
+	   		<?php endif ;
+	         if (isLogado()):
+	           $email=$_SESSION['usuario_logado'];
+	           $usuario=read_usuario_email($email);
+        ?>
+   			
    			<span class="barraCL">
-   				<a href="cadastrar.php#form">Cadastrar</a>
+   				<a href="painel.php"><?=$usuario['nome']?></a>
    			</span> &nbsp&nbsp      
    			
    			<span class="barraCL">
-   				<a href="login.php">Login</a>
+   				<a href="paginas/logout.php">sair</a>
    			</span>
-   			-->
-   			
-   			<span class="barraCL">
-   				<a href="painel.php">Olá Fulano</a>
-   			</span> &nbsp&nbsp      
-   			
-   			<span class="barraCL">
-   				<a href="#">sair</a>
-   			</span>
+   		</div>
+   		<?php endif ?>
    		</div>
    	<section class="cor1">
         <div class="content" align="center">
@@ -67,11 +78,11 @@
 			<br><br>
 			<div class="grupo" >
 			<form method="GET" action="pesquisa.php">
-			  <input class="form" type="text" id="pesquisa" placeholder="Buscar..." name="pesquisa" value="<?=$pesquisa?>" />
-			  <select name="tipo_pesquisa">
-				 <?php echo $optins; ?>
-			  </select>
-			  <button type="submit" name="submit" class="botao">Procurar</button>
+				  <input class="form" type="text" id="pesquisa" placeholder="Buscar..." name="pesquisa" value="<?=$pesquisa?>" />
+				  <select name="tipo_pesquisa">
+					 <?php echo $optins; ?>
+				  </select>
+				  <button type="submit" name="submit" class="botao">Procurar</button>
 			 </form>
 			</div>
 			<br>
@@ -136,6 +147,6 @@
 			  typeWriter(titulo);
 
 	</script>
-	<?php include("paginas/rodape.php"); ?>
+<?php include("paginas/rodape.php"); ?>
 
 		

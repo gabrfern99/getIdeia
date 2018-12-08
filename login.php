@@ -6,23 +6,34 @@
 	<link rel="stylesheet" href="paginas/design/css/login.css">
 </head>
 <body>
+  <?php
+    include 'paginas/fnLoginLogout.php';
+    if (isLogado()) {
+      header("location:painel.php");
+    }
+    $msg='';
+    if (array_key_exists('error', $_GET)) {
+      $msg="<div style='color:red;'>".$_GET['error']."</div>";
+    }
+  ?>
   <div class="container" >
     <a class="links" id="paracadastro"></a>
     <a class="links" id="paralogin"></a>
     <a href="index.php"><img src="Paginas/design/imagens/logo.png" width="100" class="loginImg"></a>
     <div class="content">      
       <div id="login">
-        <form method="post" action="#"> 
-          <h1>Login</h1> 
-          <p> 
 
-            <label for="nome_login">Seu nome</label>
-            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. natalia@gmail.com"/>
+        <form method="post" action="paginas/fazerlogin.php"> 
+          <h1>Login</h1>
+          <br><?=$msg?><br> 
+
+            <label for="nome_login">Seu Email</label>
+            <input id="email" name="email" required="required" type="text" placeholder="ex. natalia@gmail.com"/>
           </p>
            
           <p> 
-            <label for="email_login">Seu e-mail</label>
-            <input id="email_login" name="email_login" required="required" type="password" placeholder="senha" /> 
+            <label for="email_login">Sua senha</label>
+            <input id="senha" name="senha" required="required" type="password" placeholder="senha" /> 
           </p>
            
           <p> 

@@ -30,7 +30,7 @@
 
 						<div class="campo">
 							<label for="confirmeSenha">Senha confirmar</label>
-							<input class="form" type="text" id="confirmeSenha" name="confirmeSenha"" value="">
+							<input class="form" type="text" id="confirmeSenha" name="confirmeSenha" value="">
 						</div>
 						
 						<label>Termo: </label>

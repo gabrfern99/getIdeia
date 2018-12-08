@@ -39,6 +39,14 @@
 
 </head>
 <body>
+	<?php 
+		include 'paginas/fnLoginLogout.php';
+		include 'paginas/CRUD_Usuario.php';
+
+		 verificarUsuario();
+		 $email=$_SESSION['usuario_logado'];
+		 $consulta=read_usuario_email($email);
+	 ?>
 	    <!--Cabeçalho da página de Painel e Editar user-->
 
 	<div class="navbar navbar-inverse navbar-fixed-top row">
@@ -53,12 +61,12 @@
                      <li>
                      	<li class="nav-item dropdown">
 					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Fulano <i class="glyphicon glyphicon-triangle-bottom"></i>
+					          <?=$consulta['nome']?> <i class="glyphicon glyphicon-triangle-bottom"></i>
 					        </a>
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          <a class="dropdown-item" href="#">Fulano</a>
+					          <a class="dropdown-item" href="#"> <?=$consulta['nome']?></a>
 					          <div class="dropdown-divider"></div>
-					          <a class="dropdown-item" href="#"><i class="glyphicon glyphicon-log-out"></i>Sair</a>
+					          <a class="dropdown-item" href="paginas/logout.php"><i class="glyphicon glyphicon-log-out"></i>Sair</a>
 					        </div>
 					      </li>
                      </li>

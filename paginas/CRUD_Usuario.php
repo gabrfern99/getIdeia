@@ -1,5 +1,4 @@
 <?php
-require_once ('conexaoBD.php');
 
  function create_usuario($email,$senha,$nome,$avaPessoal,$foto)
 {
@@ -11,8 +10,8 @@ require_once ('conexaoBD.php');
 	$avaPessoal = mysqli_real_escape_string($conexao,$avaPessoal);
 	$foto = mysqli_real_escape_string($conexao,$foto);
 
-	$sql = "insert into usuarios(email,senha,nome,avaPessoal,foto)
-	 values('{$email}','{$senha}','{$nome}','{$avaPessoal}','{$foto}')";
+	$sql = "insert into usuarios(email,senha,nome,foto)
+	 values('{$email}','{$senha}','{$nome}','{$foto}')";
 	$resultadoDaInsercao = mysqli_query($conexao, $sql);
     return $resultadoDaInsercao;
 }
@@ -25,7 +24,7 @@ require_once ('conexaoBD.php');
 }
  function read_usuario_email($email){
 	$conexao = mysqli_connect("localhost","root","","getIdeia");
-	$sql = "select * from usuarios where id = {$email}";
+	$sql = "select * from usuarios where email = '{$email}'";
     $consult = mysqli_query($conexao, $sql);
     $result =  mysqli_fetch_assoc($consult);
     return $result;
@@ -44,6 +43,11 @@ require_once ('conexaoBD.php');
 	$sql = "update usuarios set email ='{$email}',senha='{$senha}',nome='{$nome}',avaPessoal='{$avaPessoal}',foto='{$foto}'";
 	$resultadoDaInsercao = mysqli_query($conexao, $sql);
     return $resultadoDaInsercao;
+}
+function projetos_do_usuario($id){
+	$conexao = mysqli_connect("localhost","root","","getIdeia");
+	$query ="select u.*,p.* from usuarios as u join projetos as p on p.id_usuarios = u.id  where u.id = '{$id}'";
+     return mysqli_query($conexao,$query);
 }
 /*
 create table usuarios(
