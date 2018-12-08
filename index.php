@@ -17,9 +17,9 @@
             <p><font face="Century Gothic" color="white" size="6,5">Escolha a categoria que deseja.</font></p>
 			<br>
 			<center>
-			<table> <tr> <td><div class="bt1" href="javascript:void('pesquisa.php' "onClick=" window.location='pesquisa.php'">Programador</div></td>
+			<table> <tr> <td><div class="bt1" href="javascript:void('pesquisa.php?tipo_pesquisa=programacao' "onClick=" window.location='pesquisa.php?tipo_pesquisa=programacao'">Programador</div></td>
 			<td></<td><td></<td><td></<td><td></<td><td></<td><td></<td><td></<td><td></<td><td></<td><td></<td><td></<td>
-			<td><div class="bt2" href="javascript:void('pesquisa.php' "onClick=" window.location='pesquisa.php'"><center>Design</center></div></<td></tr></table>
+			<td><div class="bt2" href="javascript:void('pesquisa.php?tipo_pesquisa=design' "onClick=" window.location='pesquisa.php?tipo_pesquisa=design'"><center>Design</center></div></<td></tr></table>
 			</center>
 		</div>
     </section>

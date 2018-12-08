@@ -15,6 +15,21 @@
   		}else{
   			$tipo_pesquisa = 'todos';
   		}
+  		if ($tipo_pesquisa == "programacao") {
+  			$optins =  "<option value='todos'>Todos</option>
+				        <option value='programação' selected='selected'>Programação</option>
+				        <option value='design' >Desing</option>";
+  		}elseif ($tipo_pesquisa =="design") {
+  			
+  			$optins =  "<option value='todos'>Todos</option>
+				        <option value='programação' >Programação</option>
+				        <option value='design' selected='selected'>Desing</option>";
+  		}else{
+  			$optins =  "<option value='todos' selected='selected'>Todos</option>
+				        <option value='programação' >Programação</option>
+				        <option value='design' >Desing</option>";
+  		}
+
   	?>
   	<div>
    		<div class="barra" >
@@ -46,9 +61,7 @@
 			<form >
 			  <input class="form" type="text" id="pesquisa" placeholder="Buscar..."/>
 			  <select>
-				  <option value="Todos">Todos</option>
-				  <option value="programação">Programação</option>
-				  <option value="design">Desing</option>
+				 <?php echo $optins; ?>
 			  </select>
 			  <button type="submit" name="submit" class="botao">Procurar</button>
 			 </form>

@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row"> 
 			<div style="background-color: #ccc;box-shadow: 8px 8px 8px gray; padding: 30px;">
-				<form method="post" action="adicionarProjeto.php">
+				<form method="post" action="paginas/adicionarProjeto.php">
 					<div class="form-group">
 						<input type="text" name="descricao" placeholder="Descrição" class="form-control"/>
 					</div>
@@ -18,7 +18,7 @@
 					</div>
 					<div class="form-group">
 						<label>Categoria</label>
-						<select class="form-control">
+						<select class="form-control" name="categoria">
 							  <option value="programação">Programação</option>
 							  <option value="design">Desing</option>
 							  <option value="outros">Outros</option>
@@ -29,7 +29,7 @@
 					</div>
 					<div class="form-group">
 					  <label for="comment">Breve descrição sobre o Projeto</label>
-					  <textarea class="form-control" rows="5" id="comment"></textarea>
+					  <textarea class="form-control" rows="5" id="comment" name="sobre"></textarea>
 					</div>
 					<button class="btn btn-default">Criar</button>
 				</form>
