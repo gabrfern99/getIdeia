@@ -10,6 +10,7 @@
 		<div class="row"> 
 			<div style="background-color: #ccc;box-shadow: 8px 8px 8px gray; padding: 30px;">
 				<form method="post" action="paginas/adicionarProjeto.php">
+					<input type="hidden" NAME="id_usuarios" value="<?=$consulta['id']?>"/>
 					<div class="form-group">
 						<input type="text" name="descricao" placeholder="Descrição" class="form-control"/>
 					</div>

@@ -1,7 +1,6 @@
 <?php
 
- function create_usuario($email,$senha,$nome,$avaPessoal,$foto)
-{
+ function create_usuario($email,$senha,$nome,$avaPessoal,$foto){
 	//Trantando valores das variáveis para não corromper o banco com caracteres especiais
 	$conexao = mysqli_connect("localhost","root","","getIdeia");
 	$email = mysqli_real_escape_string($conexao,$email);
