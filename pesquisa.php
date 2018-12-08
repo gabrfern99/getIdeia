@@ -9,6 +9,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
   <body>
+  	<?php
+  		if (array_key_exists('tipo_pesquisa', $_GET)) {
+  			$tipo_pesquisa = $_GET['tipo_pesquisa'];
+  		}else{
+  			$tipo_pesquisa = 'todos';
+  		}
+  	?>
   	<div>
    		<div class="barra" >
    			<!--
