@@ -19,7 +19,7 @@
 					<div class="form-group">
 						<label>Categoria</label>
 						<select class="form-control" name="categoria">
-							  <option value="programação">Programação</option>
+							  <option value="programacao">Programação</option>
 							  <option value="design">Desing</option>
 							  <option value="outros">Outros</option>
 			 		 	</select>

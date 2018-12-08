@@ -4,7 +4,14 @@
 	
 	<section class="cor3">
         <div class="content">
-			<form action="#" method="post" id="form">
+        	<?php
+        		//******VERIFICANDO SE TEM ALGUMA MENSAGEM DE ERRO******
+        		if (array_key_exists('error', $_GET)) {
+        			echo "<p style='color:white;text-align:center;background:#550000;'>".$_GET['error']."</p>";
+        		}
+        	  ?>
+        	  <br>
+			<form action="paginas/adicionarUsuario.php" method="post" id="form">
 				<fieldset>
 					
 						

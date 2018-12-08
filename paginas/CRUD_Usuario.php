@@ -53,4 +53,4 @@ create table usuarios(
 	nome VARCHAR(50) NOT NULL,
 	avaPessoal int DEFAULT 0, 
 	foto VARCHAR(250)
-	)
+	)*/

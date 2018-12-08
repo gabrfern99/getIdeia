@@ -87,3 +87,11 @@ h5{
     color: #fff;
     padding: 5px;
 }
+.projeto_pesquisa{
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 0.5px solid gray; 
+    margin-right: 10%;
+    margin-left: 10%;
+}

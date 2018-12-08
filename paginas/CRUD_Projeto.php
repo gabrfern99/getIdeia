@@ -26,12 +26,18 @@ require_once ('conexaoBD.php');
  function todos_projetos(){
 	$conexao = mysqli_connect("localhost","root","","getIdeia");
 	$sql = "select * from projetos";
-    $consult = mysqli_query($conexao, $sql);
+    return mysqli_query($conexao, $sql);
 
 }
 
 function remover_projeto($id){
    	$conexao = mysqli_connect("localhost","root","","getIdeia");
     $query = "delete from  projetos where id = {$id}";
-    return mysqli_query($this->conexao,$query);
+    return mysqli_query($conexao,$query);
     }
+function buscar($key){
+	$conexao = mysqli_connect("localhost","root","","getIdeia");
+	$sql= "SELECT * FROM projetos WHERE descricao LIKE '%".$key."%' ORDER BY descricao";
+	return mysqli_query($conexao,$sql);
+    
+}
